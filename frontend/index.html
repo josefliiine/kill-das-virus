@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://fav.farm/😎" />
+    <link rel="stylesheet" href="/src/assets/scss/style.scss" />
+    <title>FED23 API-utveckling Realtime Frontend</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <!-- Add overlay for GIF -->
+      <div id="gif-wrapper" class="hide">
+        <div id="overlay" class="overlay">
+          <div class="iframe-container">
+            <iframe
+              src="https://giphy.com/embed/Q8auLxOiLEKn0coynB"
+              frameborder="0"
+              class="giphy-embed"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!--STARTPAGE-HEADER AND INTRO-->
+
+      <div id="start-page" class="hide">
+        <header>
+          <h1><a href="index.html">Kill das Virus!</a></h1>
+        </header>
+        <p class="intro">
+          Get ready to conquer chaos in
+          <strong class="intro-strong">'Kill Das Virus!'</strong><br />
+          The game where you get to unleash your anti-virus prowess and say Auf
+          Wiedersehen to those pesky pathogens!
+        </p>
+
+        <!--STARTPAGE-USER INPUT-->
+
+        <form id="username-form">
+          <input
+            type="text"
+            id="username"
+            required
+            placeholder="Enter Your Name"
+            autocomplete="off"
+          />
+          <button type="submit" id="start-btn">Starte Spiel!</button>
+        </form>
+
+        <!--STARTPAGE-STATS-->
+
+        <div id="startpage-stats">
+          <div id="startpage-stats-left" class="startpage-stats-containers">
+            <h2>high scores</h2>
+            <div id="spinning-loader-hs"></div>
+            <ul id="start-page-stats-highscore"></ul>
+          </div>
+          <div id="startpage-stats-right" class="startpage-stats-containers">
+            <h2>game results</h2>
+            <div id="spinning-loader-rs"></div>
+            <ul id="start-page-stats-gameresults"></ul>
+          </div>
+        </div>
+
+        <div id="game-page" class="hide">
+          <h1 id="game-header">KILL DAS VIRUS!</h1>
+          <div id="game-info">
+            <p id="game-info-text"></p>
+          </div>
+          <div id="game-view-wrapper">
+            <div id="rule-set">
+              <h2>RULES</h2>
+              <ul class="rule-list">
+                <li>Game = 10 rounds</li>
+                <li>Click on the virus to eliminate it</li>
+                <li>Win a round by eliminating the virus the fastest</li>
+                <li>Second place is for losers</li>
+              </ul>
+            </div>
+            <div id="grid-container" class="hide-div">
+              <div class="grid-virus hide" id="gridVirus">
+                <img src="src/assets/img/virus.png" alt="Virus" />
+              </div>
+            </div>
+            <div id="score-board-display" class="hide-div">
+              <h2>SCOREBOARD</h2>
+              <div id="score-count">
+                <!-- <p id="score"> -->
+                <span id="player-one-name-score" class="score-name"></span>
+                <span id="player-one-score" class="score-counter">0</span> -
+                <span id="player-two-score" class="score-counter">0</span>
+                <span id="player-two-name-score" class="score-name"></span>
+                <!-- </p> -->
+              </div>
+              <div id="previous-round-div">
+                <h2>Previous Round</h2>
+                <div id="player-one-stats" class="player-stats">
+                  <h3 id="player-one-name"></h3>
+                  <p id="player-one-timer"></p>
+                </div>
+                <div id="player-two-stats" class="player-stats">
+                  <h3 id="player-two-name"></h3>
+                  <p id="player-two-timer"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="result-page" class="hide">
+          <h4 id="result-header">Das Spiel ist over</h4>
+          <div id="result-wrapper">
+            <img
+              id="trophy-img"
+              src="./src/assets/img/trophy.png"
+              alt="trophy image"
+            />
+            <p id="game-winner">Player 1</p>
+          </div>
+          <div id="new-game-wrapper">
+            <p class="outro">
+              Get prepared to dive back into the thrill of the game in
+              <strong class="intro-strong">'Kill Das Virus!'</strong><br />
+              and triumph over chaos once again!
+            </p>
+            <button id="new-game-button">Restart das Spiel</button>
+            <p class="outro">
+              If you're ready to exit the game and take a break from fighting
+              germs, click the 'Leave das Spiel' button.
+            </p>
+            <button id="quit-game-button" class="go-home-button">
+              Leave das Spiel
+            </button>
+          </div>
+        </div>
+
+        <footer>
+          <p>This game was made for you by Mattea, Josefine and Victor</p>
+          <p>&copy; FED23 GAMES 2024</p>
+        </footer>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
